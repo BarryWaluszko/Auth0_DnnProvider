@@ -1,0 +1,6 @@
+*.user
+*.suo
+Backup/
+obj/
+.vs/
+node_modules/

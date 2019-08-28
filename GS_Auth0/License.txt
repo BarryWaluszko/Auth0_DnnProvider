@@ -1,0 +1,57 @@
+<h1>Glanton Solutions 'Azure AD Connector' End User License Agreement (EULA)</h1>
+
+<p>This End-User Licence Agreement ("EULA") is a legal agreement between you and Glanton Solutions  that covers the Glanton Solutions software and any supplemental information that Glanton Solutions  has made available (including documents together with their accompanying supplemental information) All such software is referred to herein as the "Software".</p>
+
+<p>By accessing or otherwise using any Glanton Solutions Software, you agree to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, do not use any Glanton Solutions software. This EULA does not grant you any other rights but for the ones contained herein.</p>
+
+
+<h3>1. GRANT OF NON-EXCLUSIVE LICENSE</h3> 
+
+<p>Glanton Solutions grants you a non-exclusive, non-transferable right to use the Software on your DotNetNuke(DNN) installation based on your purchase.</p> 
+
+<p>One Production License is required to install and use the Software on each DotNetNuke installation, A DNN installation is defined as a single DNN database which can host multiple child portals. These portals may have their own unique web addresses, but they are managed from a single DNN host, you must purchase additional Production License for each extra DNN installation.</p> 
+
+<p>When the source code is provided with the Software, Glanton Solutions grants you the right to modify, alter, improve, or enhance the Software without limitation for your own use, except as described in this EULA.</p> 
+
+<p>Although rights to modification of the Software are granted by this EULA, you may not tamper with, alter, or use the Software in a way that disables, circumvents, or otherwise defeats its built-in licensing verification and enforcement capabilities. The right to modification of the Software does not include the right to remove or alter any trademark, logo, copyright or other proprietary notice, legend, symbol or label in the Software.</p> 
+
+<p>Any modifications made to the Software will render it non-supportable by Glanton Solutions. You  are not allowed to distribute or redistribute changes made to the Software to anyone other than groups designated by the agreement between Glanton Solutions and the user.</p> 
+
+<p>Although the source code for the Software may be included in some editions, you may not share, use, or reuse the knowledge or technologies in other applications without explicit approval from Glanton Solutions.</p> 
+
+<p>You may make copies of the Software as is reasonably necessary for its use. Each copy must reproduce all copyright and other proprietary rights notices on or in the Software.</p> 
+
+<p>Each copy must reproduce all copyright and other proprietary rights notices on or in the Software License. You may not modify or create derivative copies of the Software License.</p> 
+
+<p>All rights not expressly granted to you are retained by Glanton Solutions.</p> 
+
+<h3>2. INTELLECTUAL PROPERTY RIGHTS</h3>
+
+<p>The Software is owned by Glanton Solutions and is protected by Australian and international copyright laws and treaties, as well as other intellectual property laws and treaties.</p> 
+
+<p>You must not remove or alter any copyright notices on any copies of the Software including but not limited to source code as well as the display of the Software on your website. This  Software copy is licensed, not sold.</p> 
+
+<p>You may not use, copy, or distribute the Software, except as granted by this EULA, without written authorisation from Glanton Solutions or its designated agents.</p> 
+
+<p>Furthermore, this EULA does not grant you any rights in connection with any trademarks or service marks of Glanton Solutions.</p> 
+
+<p>Glanton Solutions reserves all intellectual property rights, including copyrights, and trademark rights.</p> 
+
+
+<h3>3. TERMINATION.</h3>
+
+<p>Without prejudice to any other rights, Glanton Solutions  may terminate this EULA if you fail to comply with the terms and conditions of this EULA. In such event, you must destroy all copies of the Software.</p> 
+
+ 
+
+<h3>4. NO WARRANTIES</h3>
+
+<p>Glanton Solutions expressly disclaims any warranty for the Software. The Software is provided 'As Is' without any express or implied warranty of any kind, including but not limited to any warranties of merchantability, noninfringement, or fitness of a particular purpose. Glanton Solutions does not warrant or assume responsibility for the accuracy or completeness of any information, text, graphics, links or other items contained within the Software. Glanton Solutions makes no warranties respecting any harm that may be caused by the transmission of a computer virus, worm, time bomb, logic bomb, or other such computer program. Glanton Solutions further expressly disclaims any warranty or representation to Authorised Users or to any third party.</p> 
+
+<h3>5. LIMITATION OF LIABILITY</h3>
+
+<p>In no event shall Glanton Solutions be liable for any damages (including, without limitation, lost profits, business interruption, or lost information) rising out of 'Authorised Users' use of or inability to use the Software, even if Glanton Solutions has been advised of the possibility of such damages. In no event will Glanton Solutions be liable for loss of data or for indirect, special, incidental, consequential (including lost profit), or other damages based in contract, tort or otherwise. Glanton Solutions shall have no liability with respect to the content of the Software or any part thereof, including but not limited to errors or omissions contained therein, libel, infringements of rights of publicity, privacy, trademark rights, business interruption, personal injury, loss of privacy, moral rights or the disclosure of confidential information.</p> 
+
+<h3>6. GOVERNING LAW</h3> 
+
+<p>This EULA is governed by the laws of Australia, excluding the application of any conflict of law rules.</p> 

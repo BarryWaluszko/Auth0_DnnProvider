@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GS.Auth0</name>
+    </assembly>
+    <members>
+        <member name="T:GS.Auth0.Components.Auth0ConfigBase">
+            <summary>
+            The Config class provides a central area for management of Module Configuration Settings.
+            </summary>
+        </member>
+        <member name="P:GS.Auth0.Components.Auth0ConfigBase.IsEnabled">
+            <summary>
+            Flag that determines whether provider is enabled or disabled.
+            </summary>
+        </member>
+        <member name="P:GS.Auth0.Components.Auth0ConfigBase.IsDiagnosticModeEnabled">
+            <summary>
+            Flag that determines if diagnostic info should be saved in DNN log file
+            </summary>
+        </member>
+        <member name="P:GS.Auth0.Components.Auth0ConfigBase.AreProviderSettingsCorrect">
+            <summary>
+            Check if provider has defined all coordinates that are necessary to initialize login flow.
+            </summary>
+        </member>
+        <member name="M:GS.Auth0.Components.Auth0ConfigBase.GetConfig(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="service">Unique string required to create cache key</param>
+            <param name="portalId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GS.Auth0.Components.Helpers.FirstPortalID">
+            <summary>
+            Find the smallest portalID in the DNN instance
+            </summary>
+        </member>
+        <member name="M:GS.Auth0.Components.UserController.User_Create(System.String,DotNetNuke.Entities.Portals.PortalSettings,System.Boolean)">
+            <summary>
+            Get user from DNN cache, if it doesn't exist create him
+            </summary>
+            <param name="username"></param>
+            <param name="portalSettings"></param>
+            <param name="isDiagnosticModeEnabled">Enable that flag to create logs with info about what this method do</param>
+            <returns></returns>
+        </member>
+        <member name="M:GS.Auth0.Components.UserController.User_Update(DotNetNuke.Entities.Users.UserInfo,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Update the DNN user profile
+            </summary>
+            <param name="dnnUser"></param> 
+            <param name="displayName"></param>
+            <param name="emailAddress"></param>
+            <param name="portalID"></param>
+            <param name="isDiagnosticModeEnabled">Enable that flag to create logs with info about what this method do.</param>
+            <returns></returns>
+        </member>
+        <member name="F:GS.Auth0.Constants.PROVIDER_NAME">
+            <summary>
+            Unique name that was assigned to this Auth0 provider
+            </summary>
+        </member>
+        <member name="F:GS.Auth0.Constants.AUTH_COOKIE_NAME">
+            <summary>
+            Name of the authentication cookie where authentication ticket will persist
+            </summary>
+        </member>
+        <member name="F:GS.Auth0.Constants.ALERT_QUERY_STRING">
+            <summary>
+            Name of the query string key that contains error message
+            </summary>
+        </member>
+        <member name="P:GS.Auth0.LogIn.Enabled">
+            <summary>
+            Flag that determines whether 'Auth0 Connector' is enabled for this portal
+            </summary>
+        </member>
+        <member name="P:GS.Auth0.LogIn.AlertMessage">
+            <summary>
+            Return alert message if there is any
+            </summary>
+        </member>
+        <member name="P:GS.Auth0.LogIn.OwinStatus">
+            <summary>
+            Check if OWIN pipeline is enabled in DNN web.config file
+            </summary>
+        </member>
+        <member name="F:GS.Auth0.LogIn.loginItem">
+            <summary>
+            loginItem control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:GS.Auth0.LogIn.loginButton">
+            <summary>
+            loginButton control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:GS.Auth0.LogOff.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,155 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="GS.Auth0" type="Auth_System" version="01.00.00">
+      <friendlyName>Auth0 Connector</friendlyName>
+      <description>A DNN provider utilizing Auth0 framework. Allows you to sign in to DNN using various accounts like: Google, Facebook, Twitter.</description>
+      <iconFile>DesktopModules\AuthenticationServices\GS_Auth0\Iconfile.png</iconFile>
+        <owner>
+        <name>Glanton</name>
+        <organization>Glanton</organization>
+        <url>http://www.glanton.com</url>
+        <email>support@glanton.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <azureCompatible>true</azureCompatible>
+      <dependencies>
+        <dependency type="CoreVersion">08.00.01</dependency>
+      </dependencies>
+
+      <components>
+      
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/AuthenticationServices/GS_Auth0</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <component type="AuthenticationSystem">
+          <authenticationService>
+            <type>GS_Auth0</type>
+            <settingsControlSrc>DesktopModules/AuthenticationServices/GS_Auth0/Settings.ascx</settingsControlSrc>
+            <loginControlSrc>DesktopModules/AuthenticationServices/GS_Auth0/Login.ascx</loginControlSrc>
+            <logoffControlSrc>DesktopModules/AuthenticationServices/GS_Auth0/Logoff.ascx</logoffControlSrc>
+          </authenticationService>
+        </component>
+      
+        <component type="Assembly">
+          <assemblies>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>GS.Auth0.dll</name>
+              <version>00.00.01</version>
+            </assembly>
+
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Kentor.OwinCookieSaver.dll</name>
+              <version>1.1.1.0</version>
+            </assembly>            
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.IdentityModel.dll</name>
+              <version>3.5.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.IdentityModel.JsonWebTokens.dll</name>
+              <version>5.5.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.IdentityModel.Logging.dll</name>
+              <version>5.5.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.IdentityModel.Protocols.dll</name>
+              <version>5.5.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</name>
+              <version>5.5.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.IdentityModel.Tokens.dll</name>
+              <version>5.5.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.Owin.dll</name>
+              <version>4.0.1.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.Owin.Host.SystemWeb.dll</name>
+              <version>4.0.1.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.Owin.Security.dll</name>
+              <version>4.0.1.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.Owin.Security.Cookies.dll</name>
+              <version>4.0.1.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Microsoft.Owin.Security.OpenIdConnect.dll</name>
+              <version>4.0.1.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Newtonsoft.Json.dll</name>
+              <version>12.0.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Owin.dll</name>
+              <version>1.0.0.0</version>
+            </assembly>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>System.IdentityModel.Tokens.Jwt.dll</name>
+              <version>5.5.0.0</version>
+            </assembly>
+          </assemblies>
+        </component>
+
+        <component type="Config">
+          <config>
+            <configFile>web.config</configFile>
+            <install>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/appSettings" action="update" key="key" collision="overwrite">
+                    <add key="owin:AppStartup" value="GS_Auth0" />
+                  </node>
+                  <node path="/configuration/dotnetnuke/authServices/messageHandlers" action="update" key="name" collision="overwrite">
+                    <add name="Auth0Auth" type="GS.Auth0.Api.Auth.Auth0AuthMessageHandler, GS.Auth0" enabled="true" defaultInclude="true" forceSSL="false" />
+                  </node>
+                </nodes>
+              </configuration>
+            </install>
+            <uninstall>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/appSettings/add[@key='owin:AppStartup']" action="remove" />
+                  <node path="/configuration/dotnetnuke/authServices/messageHandlers/add[@name='Auth0Auth']" action="remove"/>
+                </nodes>
+              </configuration>
+            </uninstall>
+          </config>
+        </component>
+        
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

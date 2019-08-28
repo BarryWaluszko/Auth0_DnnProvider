@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<!-- WARNING, WARNING, WARNING -->
+<!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
+
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="PackageModule" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <XmlRead Prefix="n"
+                    Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+                    XPath="dotnetnuke/packages/package[1]/@version"
+                    XmlFileName="$(DNNFileName).dnn">
+      <Output TaskParameter="Value" PropertyName="Version" />
+    </XmlRead>
+    <ItemGroup>
+      <InstallInclude Include="**\*.ascx" Exclude="**\node_modules\**;**\packages\**" />
+      <InstallInclude Include="**\*.min.css" Exclude="**\node_modules\**;**\packages\**" />
+      <InstallInclude Include="**\*.html" Exclude="**\node_modules\**;**\packages\**" />
+      <InstallInclude Include="**\*.resx" Exclude="**\node_modules\**;**\packages\**" />
+      <InstallInclude Include="**\*.aspx" Exclude="**\node_modules\**;**\packages\**" />
+      <InstallInclude Include="**\*.png" Exclude="**\node_modules\**;**\packages\**" />
+      <InstallInclude Include="**\*.js" Exclude="**\node_modules\**;**\packages\**;**\app\**;**\gulpfile.js" />
+      <InstallInclude Include="**\Iconfile.png" />
+    </ItemGroup>
+
+    <CreateItem Include="$(DNNFileName).dnn">
+      <Output TaskParameter="Include" ItemName="PackageManifestFiles" />
+    </CreateItem>
+
+    <CreateItem Include="License.txt">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\ReleaseNotes.txt">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\$(AssemblyName).dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Kentor.OwinCookieSaver.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.IdentityModel.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.IdentityModel.JsonWebTokens.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>       
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.IdentityModel.Logging.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.IdentityModel.Protocols.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>    
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.IdentityModel.Tokens.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.Owin.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.Owin.Host.SystemWeb.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.Owin.Security.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.Owin.Security.Cookies.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Microsoft.Owin.Security.OpenIdConnect.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Newtonsoft.Json.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\Owin.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\System.IdentityModel.Tokens.Jwt.dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+
+    <Copy SourceFiles="@(PackageManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package" />
+    <Copy SourceFiles="@(PackageTxtFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package" />
+
+    <!-- create the INSTALL RESOURCES.ZIP file -->
+    <Copy SourceFiles="@(InstallInclude)" DestinationFolder="$(MSBuildProjectDirectory)\ResourcesZip\%(RecursiveDir)" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\ResourcesZip\**\*.*">
+      <Output TaskParameter="Include" ItemName="ResourcesContent" />
+    </CreateItem>
+
+    <Zip Files="@(ResourcesContent)" WorkingDirectory="$(MSBuildProjectDirectory)\ResourcesZip" ZipFileName="Resources.$(Extension)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Resources.$(Extension)" DestinationFolder="package/" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\Package\**\*.*">
+      <Output TaskParameter="Include" ItemName="OutputContent" />
+    </CreateItem>
+    <!-- Create the Install package -->
+    <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Install.$(Extension)" />
+    <!-- Copy the Install package to the Packages folder -->
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" DestinationFolder="InstallPackages/" />
+
+    <Delete Files="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" />
+    <Delete Files="$(MSBuildProjectDirectory)\Resources.Zip" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\ResourcesZip" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\obj" />
+    
+  </Target>
+</Project>
