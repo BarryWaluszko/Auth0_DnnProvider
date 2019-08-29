@@ -7,7 +7,7 @@ At the end you should see similar to the figure below.
 ![alt text](https://raw.githubusercontent.com/BarryWaluszko/Auth0_DnnProvider/doc/doc/images/Install_03.png)
 
 Following changes will be automatically applied in `web.config` file:
-![alt text](https://raw.githubusercontent.com/BarryWaluszko/Auth0_DnnProvider/doc/images/DNN_Configure_04.png)
+![alt text](https://raw.githubusercontent.com/BarryWaluszko/Auth0_DnnProvider/doc/doc/images/DNN_Configure_04.png)
 
 Following dll's will be added to the DNN `bin` directory. All are necessary for OWIN interface. 
 ![alt text](https://raw.githubusercontent.com/BarryWaluszko/Auth0_DnnProvider/doc/doc/images/DNN_Configure_05.png)
