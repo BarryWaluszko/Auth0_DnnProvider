@@ -1,4 +1,4 @@
-# Auth0 Connector
+# Auth0 Connector - DNN provider
 A DNN provider utilizing Auth0 platform. Allows you to sign in to DNN using various accounts like: Google, Facebook, Twitter.
 
 ## Overview
@@ -10,4 +10,8 @@ The "Auth0 Connector" is a provider for DNN Platform that uses [Auth0 platform](
 * [Requirements](doc/Requirements.md)
 * [Installation](doc/Installation.md)
 * [Configuration](doc/Configuration.md)
+    **[Configuration on the Auth0 platform](doc/Configuration.md#configuration-at-the-auth0-platform)
+    **[Configuration on the DNN website](doc/Configuration.md#configuration-on-the-dnn-website)
 * [Login flow](doc/LoginFlow.md)
+* [Author](doc/Author.md)
+* [License](doc/License.md)
