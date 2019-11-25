@@ -1,6 +1,6 @@
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="GS.Auth0" type="Auth_System" version="01.00.00">
+    <package name="GS.Auth0" type="Auth_System" version="01.00.02">
       <friendlyName>Auth0 Connector</friendlyName>
       <description>A DNN provider utilizing Auth0 framework. Allows you to sign in to DNN using various accounts like: Google, Facebook, Twitter.</description>
       <iconFile>DesktopModules\AuthenticationServices\GS_Auth0\Iconfile.png</iconFile>
